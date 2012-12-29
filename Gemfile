@@ -2,7 +2,9 @@
 source "https://rubygems.org"
 
 gem "sinatra"
-gem "sequel"
+
+gem "data_mapper"
+gem "dm-sqlite-adapter"
 gem "pg"
 
 gem "resque"
