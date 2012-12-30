@@ -1,2 +1,7 @@
 require './app'
-run Sinatra::Application
+require 'resque/server'
+require 'resque_scheduler/server'
+
+run Rack::URLMap.new \
+  "/"       => Sinatra::Application,
+  "/resque" => Resque::Server.new

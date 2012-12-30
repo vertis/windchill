@@ -1,14 +1,14 @@
 # A sample Gemfile
 source "https://rubygems.org"
 
+gem "rake"
+
 gem "sinatra"
 
-gem "data_mapper"
-gem "dm-sqlite-adapter"
-gem "dm-postgres-adapter"
+gem "sinatra-activerecord"
 gem "pg"
 
-gem "rufus-scheduler"
+gem "resque-scheduler"
 gem "eventmachine"
 gem "chronic"
 
@@ -17,3 +17,7 @@ gem "unicorn"
 gem "pony"
 
 gem "httparty"
+
+gem 'foreman'
+gem 'shotgun'
+gem 'resque'
