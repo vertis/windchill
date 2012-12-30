@@ -1,3 +1,1 @@
-web: bundle exec unicorn -p $PORT
-resque: rake jobs:work
-scheduler: rake resque:scheduler
+web: bundle exec unicorn -p $PORT -c ./config/unicorn.rb
