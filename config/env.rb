@@ -29,7 +29,7 @@ set :database, ENV['DATABASE_URL'] || "sqlite3://#{Dir.pwd}/my.db"
 
 
 # resque scheduler
-Resque.redis = 'localhost:6379'
+Resque.redis = ENV["REDISCLOUD_URL"] || 'localhost:6379'
 Resque.redis.namespace = "resque:windchill"
 
 # If you want to be able to dynamically change the schedule,
@@ -40,6 +40,7 @@ Resque.redis.namespace = "resque:windchill"
 # Note: This feature is only available in >=2.0.0.
 Resque::Scheduler.dynamic = true
 Resque.schedule = {}
+Resque.after_fork = Proc.new { ActiveRecord::Base.establish_connection }
 
 Dir["./app/jobs/*.rb"].each { |file| require file }
 
