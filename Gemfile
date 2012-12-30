@@ -5,9 +5,15 @@ gem "sinatra"
 
 gem "data_mapper"
 gem "dm-sqlite-adapter"
+gem "dm-postgres-adapter"
 gem "pg"
 
-gem "resque"
-gem "resque-scheduler"
+gem "rufus-scheduler"
+gem "eventmachine"
+gem "chronic"
 
 gem "unicorn"
+
+gem "pony"
+
+gem "httparty"
