@@ -29,7 +29,7 @@ set :database, ENV['DATABASE_URL'] || "sqlite3://#{Dir.pwd}/my.db"
 
 
 # resque scheduler
-Resque.redis = ENV["REDISCLOUD_URL"] || 'localhost:6379'
+Resque.redis = ENV["REDISTOGO_URL"] || 'localhost:6379'
 Resque.redis.namespace = "resque:windchill"
 
 # If you want to be able to dynamically change the schedule,
