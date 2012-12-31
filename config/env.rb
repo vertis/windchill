@@ -10,8 +10,11 @@ require 'chronic'
 
 require 'newrelic_rpm'
 
+require 'honeybadger'
+
 require './app/models/check.rb'
 require './app/jobs/check_job.rb'
+#Dir["./app/jobs/*.rb"].each { |file| require file }
 
 Pony.options = {
   :via => :smtp,
@@ -44,6 +47,6 @@ Resque::Scheduler.dynamic = true
 Resque.schedule = {}
 Resque.after_fork = Proc.new { ActiveRecord::Base.establish_connection }
 
-Dir["./app/jobs/*.rb"].each { |file| require file }
-
-#::NewRelic::Agent.after_fork(:force_reconnect => true) if defined? Unicorn
+Honeybadger.configure do |config|
+  config.api_key = ENV["HONEYBADGER_API_KEY"]
+end
