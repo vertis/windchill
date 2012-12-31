@@ -46,15 +46,4 @@ Resque.after_fork = Proc.new { ActiveRecord::Base.establish_connection }
 
 Dir["./app/jobs/*.rb"].each { |file| require file }
 
-# if ENV['CHECK']
-#   scheduler = Rufus::Scheduler::PlainScheduler.start_new
-#   scheduler.every '3m', :first_in => '0s' do |newcheck|
-#     puts "Loading new checks"
-#     Check.where('loaded_by != ? OR loaded_by IS NULL',scheduler.object_id.to_s).each do |check|
-#       puts "Adding #{check.url} (#{check.id})"
-#       scheduler.every check.frequency || '3m', CheckJob.new(check), :first_in => '10s'
-#       check.update_attribute(:loaded_by, scheduler.object_id.to_s)
-#     end
-#   end
-# end
-
+::NewRelic::Agent.after_fork(:force_reconnect => true) if defined? Unicorn
