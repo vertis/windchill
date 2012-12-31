@@ -30,7 +30,7 @@ GEM
     mime-types (1.19)
     multi_json (1.5.0)
     multi_xml (0.5.1)
-    newrelic_rpm (3.5.4.34)
+    newrelic_rpm (3.5.3.25)
     pg (0.14.1)
     polyglot (0.3.3)
     pony (1.4)
@@ -84,7 +84,7 @@ DEPENDENCIES
   eventmachine
   foreman
   httparty
-  newrelic_rpm
+  newrelic_rpm (= 3.5.3.25)
   pg
   pony
   rake

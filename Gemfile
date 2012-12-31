@@ -22,6 +22,6 @@ gem 'foreman'
 gem 'shotgun'
 gem 'resque'
 
-gem 'newrelic_rpm'
+gem 'newrelic_rpm', '3.5.3.25'
 # gem 'rpm_contrib'
 # gem 'newrelic-redis'
