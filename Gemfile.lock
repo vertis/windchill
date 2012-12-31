@@ -30,6 +30,10 @@ GEM
     mime-types (1.19)
     multi_json (1.5.0)
     multi_xml (0.5.1)
+    newrelic-redis (1.4.0)
+      newrelic_rpm (~> 3.0)
+      redis (< 4.0)
+    newrelic_rpm (3.5.4.34)
     pg (0.14.1)
     polyglot (0.3.3)
     pony (1.4)
@@ -51,6 +55,9 @@ GEM
       redis (>= 2.0.1)
       resque (>= 1.20.0)
       rufus-scheduler
+    rpm_contrib (2.1.11)
+      newrelic_rpm (>= 3.1.1)
+      newrelic_rpm (>= 3.1.1)
     rufus-scheduler (2.0.17)
       tzinfo (>= 0.3.23)
     shotgun (0.9)
@@ -83,11 +90,14 @@ DEPENDENCIES
   eventmachine
   foreman
   httparty
+  newrelic-redis
+  newrelic_rpm
   pg
   pony
   rake
   resque
   resque-scheduler
+  rpm_contrib
   shotgun
   sinatra
   sinatra-activerecord

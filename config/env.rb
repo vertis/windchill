@@ -8,6 +8,8 @@ require 'pony'
 require 'httparty'
 require 'chronic'
 
+require 'newrelic_rpm'
+
 require './app/models/check.rb'
 require './app/jobs/check_job.rb'
 

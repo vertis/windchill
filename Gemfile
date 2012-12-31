@@ -21,3 +21,7 @@ gem "httparty"
 gem 'foreman'
 gem 'shotgun'
 gem 'resque'
+
+gem 'newrelic_rpm'
+gem 'rpm_contrib'
+gem 'newrelic-redis'
