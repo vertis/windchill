@@ -1,6 +1,8 @@
 worker_processes 4
 timeout 30
 
+preload_app true
+
 @resque_pid = nil
 @scheduler_pid = nil
 

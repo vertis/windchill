@@ -23,5 +23,5 @@ gem 'shotgun'
 gem 'resque'
 
 gem 'newrelic_rpm'
-gem 'rpm_contrib'
-gem 'newrelic-redis'
+# gem 'rpm_contrib'
+# gem 'newrelic-redis'

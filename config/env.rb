@@ -46,4 +46,4 @@ Resque.after_fork = Proc.new { ActiveRecord::Base.establish_connection }
 
 Dir["./app/jobs/*.rb"].each { |file| require file }
 
-::NewRelic::Agent.after_fork(:force_reconnect => true) if defined? Unicorn
+#::NewRelic::Agent.after_fork(:force_reconnect => true) if defined? Unicorn
