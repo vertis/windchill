@@ -39,8 +39,8 @@ class CheckJob
   
   def send_alert
     if @check.last_notified.nil? || @check.last_notified <= Chronic.parse('10 minutes ago')
-      Pony.mail(:to => 'luke.a.chadwick@gmail.com', 
-                :from => 'luke.a.chadwick@gmail.com', 
+      Pony.mail(:to => ENV['NOTIFY_EMAIL'], 
+                :from => ENV['NOTIFY_EMAIL'], 
                 :subject => "[windchill] Your app #{@check.url} is down", 
                 :body => "Your app #{@check.url} is down")
        @check.last_notified = Time.now
@@ -49,6 +49,6 @@ class CheckJob
   end
   
   def send_recovery
-    Pony.mail(:to => 'luke.a.chadwick@gmail.com', :from => 'luke.a.chadwick@gmail.com', :subject => "[windchill] Your app #{@check.url} has recovered", :body => "Your app #{@check.url} has recovered")
+    Pony.mail(:to => ENV['NOTIFY_EMAIL'], :from => ENV['NOTIFY_EMAIL'], :subject => "[windchill] Your app #{@check.url} has recovered", :body => "Your app #{@check.url} has recovered")
   end
 end
