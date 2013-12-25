@@ -4,3 +4,5 @@ This is a simple uptime monitor that I wrote for myself. It runs on heroku and s
 It will need a redis provider, and some environment variables if you want to start using it.
 
 To get started, clone the repo, and create a new heroku app.
+
+Edit the job in app/jobs
